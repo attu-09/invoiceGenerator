@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://form.innovativebizz.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Basic -->
+    <title>
+      Automated Excel
+    </title>
+    <!-- Define Charset -->
+    
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Page Description and Author -->
+    <meta name="description" content="ConBiz - Responsive HTML5 Template">
+    <meta name="author" content="Grayrids">
+    
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}" type="text/css" media="screen">
+   
+    <!-- Animate CSS  -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='animate.css')}}" media="screen">
+
+  </head>
+  <body cz-shortcut-listen="true">
+    <style>
+      .table>tbody>tr>td {
+        border-top: none;
+      }
+    </style>
+    <!-- Full Body Container -->
+    <div id="container">
+
+      <!-- Start Page Header -->
+      <div class="page-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              {%if msg%}
+              <h1> {{msg}}</h1>
+              {%else%}
+              <h1> Fill Details In Form</h1>
+              {%endif%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Page Header -->        
+      
+      <!-- Start Content Section -->
+      <div class="container">
+        <div class="row">
+          <form role="form" id="contactForm" class="contact-form" data-toggle="validator" novalidate="true" method="POST" >
+            <h2> Form</h2>   
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <div class="form-group" style="margin-top: 10px;" >
+                    <div class="controls">
+                      <input type="text" class="form-control" id="receiverEmail" name="recieverEmail" placeholder="Receiver Email" required="" data-error="Please enter your Qty">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="invoiceNo" name="invoiceNo" class="form-control" placeholder="Invoice No" required="" data-error="Please enter Invoice No.">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="date" class="form-control" name="invoiceDate" id="invoiceDate" placeholder="Invoice Date" required="" data-error="Please enter your Invoice Date ">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="venderCode" class="form-control" name="venderCode" placeholder="Vendor Code" required="" data-error="Please enter Vendor Code">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="invoiceAmount" class="form-control" name="invoiceAmount" placeholder="Invoice Amount" required="" data-error="Please enter Invoice Amount">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="taxAmount" class="form-control" name="taxAmount" placeholder="Tax Amount" required="" data-error="Please enter Tax Amount">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div> 
+                  </td>
+
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="poNo" class="form-control" name="poNo." placeholder="P.O. No." required="" data-error="Please enter P.O. No.">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- add fields -->
+            <h5>Add Data</h5>
+            <table class="table table-borderless" style="margin: 0;">
+              <tbody id="inp-wrapper">
+                <tr id="inp-container">
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" id="poLineItemNo" class="form-control" name="poLineItem" placeholder="P.O. Line item No." required="" data-error="Please enter P.O. Line item No.">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div> 
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" class="form-control" id="qty" name="quantity" placeholder="Qty" required="" data-error="Please enter your Qty">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" class="form-control" id="value" name="value" placeholder="Value" required="" data-error="Please enter your Value">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <div class="controls">
+                        <input type="text" class="form-control" id="gst" name="gst"placeholder="GST" required="" data-error="Please enter GST">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="width: 100%;">
+              <button type="button" onclick="addClmn()" class="btn btn-success" style="pointer-events: all; cursor: pointer;float: right; "> Add more</button>  
+            </div>
+            <div class="clearfix"></div> 
+            <button type="submit" id="submit" class="btn btn-success disabled" style="pointer-events: all; cursor: pointer;"> Submit Form</button>
+            <div id="msgSubmit" class="h3 text-center hidden"></div> 
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+      <!-- End Content Section  -->
+    </div>
+
+    <!-- Main JS  -->
+    <script type="text/javascript" src="{{url_for('static',filename='jquery-min.js')}}"></script>      
+    <script type="text/javascript" src="{{url_for('static',filename='form-validator.min.js')}}"></script>  
+    <script >
+      const inpElement = document.getElementById("inp-container").cloneNode(true);
+      var form = document.getElementById("inp-wrapper")
+      function addClmn(){
+      let copy = inpElement.cloneNode(true);
+      form.append(copy);
+  }
+  </script>
+</body></html>
